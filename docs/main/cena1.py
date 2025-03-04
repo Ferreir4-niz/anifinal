@@ -1,11 +1,25 @@
 import turtle
-import time
 
-def fala(personagem: turtle.Turtle, 
-         texto: str, 
-         angulo: int = 45, 
-         distancia: int = 150,
-         tempo: float = 5):
+def exibir_coordenadas(x: float, y: float) -> None:
+    """Exibe as coordenadas do clique do mouse."""
+
+    # Exibe as coordenadas no console
+    print(f"Coordenadas do clique: x={x:0.0f}, y={y:0.0f}")
+
+    # Exibe as coordenadas na tela com o turtle
+    turtle.penup()  # Levanta a caneta para não desenhar linhas
+    turtle.goto(x, y)  # Move para as coordenadas
+    turtle.pendown()  # Abaixa a caneta para começar a desenhar ou escrever
+    turtle.write(f"x={x:0.0f}, y={y:0.0f}", align="center")  # Escreve as coordenadas
+    turtle.stamp()  # Coloca uma marca no local do clique
+
+# Configuração inicial do turtle
+turtle.speed(0)  # Define a velocidade do turtle (0 = mais rápido)
+
+# Usa a função onscreenclick para capturar o clique do mouse
+turtle.onscreenclick(exibir_coordenadas)
+
+def fala(personagem: turtle.Turtle, texto: str, angulo: int = 45, distancia: int = 150, tempo: float = 5):
     """Exibe um balão de fala para um personagem."""
 
     # Criando um turtle para o balão
@@ -45,31 +59,40 @@ def cena1():
     
     # Definir fundo
     try:
-        turtle.bgpic(r"C:\Users\nick\Documents\GitHub\anifinal\NiSaAn.py\fundos\fundo2.png")
- # Certifique-se de que o arquivo está na pasta correta
+        turtle.bgpic(r"C:\Users\nick\Documents\GitHub\anifinal\NiSaAn.py\fundos\fundo2.gif")
     except:
         print("Erro: fundo2.gif não encontrado!")
 
     # Criar personagem
     finnEjake = turtle.Turtle()
-    finnEjake.up()
-    
-    # Registrar e definir imagem
+
+
+    # Definir imagem e tamanho (tentando ajustar com shapesize, mas só afeta o tamanho da tartaruga)
     try:
         turtle.addshape(r"C:\Users\nick\Documents\GitHub\anifinal\NiSaAn.py\personagens\finnEjake.gif")
         finnEjake.shape(r"C:\Users\nick\Documents\GitHub\anifinal\NiSaAn.py\personagens\finnEjake.gif")
+        
+        # Tentar diminuir o tamanho do "shape" (não afeta imagem gif, mas afeta a tartaruga)
+        finnEjake.shapesize(stretch_wid=0.1, stretch_len=0.1)  # Tentando diminuir a tartaruga
     except:
         print("Erro: finnEjake.gif não encontrado!")
 
     # Movimentação
-    finnEjake.goto(-MEIA_LARG, 0)
-    finnEjake.goto(0, 0)
+    finnEjake.up()
+    finnEjake.goto(x=-543, y=-187)
+    finnEjake.down()  
+    finnEjake.goto(x=-239, y=-197)
+    finnEjake.goto( x=449, y=-142)
 
+  
     # Exibir texto
-    turtle.write("Olá!")
+    turtle.penup()
+    turtle.goto(0, 100)  # Definir uma posição para o texto "Olá!"
+    turtle.write("Olá!", align="center", font=("Arial", 18, "bold"))
 
     # Manter a janela aberta
     turtle.done()
 
 # Chamar a função
 cena1()
+
