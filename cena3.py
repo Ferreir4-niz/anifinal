@@ -92,6 +92,7 @@ jakeEfinn.goto(-515, -148)
 jakeEfinn.showturtle()
 
 coordenadas = [(-254, -145), (-175, -143), (-20, -143), (114, -120), (175, -116)]
+cordenada2 = [(448, -217), (324, -161), (195,123), (73, -74), (-48, -62), (-194,-91)]
 mover_com_while(jakeEfinn, coordenadas)
 
 jujuba = turtle.Turtle()
@@ -102,7 +103,7 @@ except:
         print("Erro: jujuba.gif não encontrado!")
 jujuba.hideturtle()
 jujuba.penup()
-jujuba.goto()
+jujuba.goto(12, 74)
 jujuba.showturtle()
 
 iris = turtle.Turtle()
@@ -114,7 +115,7 @@ except:
 
 iris.hideturtle()
 iris.penup()
-iris.goto()
+iris.goto(-352, -114)
 iris.showturtle()
 
 #falas
@@ -135,3 +136,7 @@ turtle.ontimer(lambda: apagar_balao(), )
 turtle.ontimer(lambda: apagar_balao(), )
 turtle.ontimer(lambda: apagar_balao(), )
 turtle.ontimer(lambda: apagar_balao(), )
+
+turtle.mainloop()
+
+cena3()
