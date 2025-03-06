@@ -106,13 +106,14 @@ except:
     print("Erro: jujuba.gif não encontrado!")
 jujuba.hideturtle()
 jujuba.penup()
-jujuba.goto( x=-503, y=-120)
+jujuba.goto(-404,-187)
 jujuba.showturtle()
 
 #falas
 
 turtle.ontimer(lambda: fala(jakeEfinn, "Oi, princesa jujuba!"), 8000)
-turtle.ontimer(lambda: fala(jujuba, "Oi, meninos! como vocês estão?"), 10000)
+turtle.ontimer(lambda: fala(jujuba, """Oi, meninos! 
+como vocês estão?"""), 10000)
 turtle.ontimer(lambda: fala(jakeEfinn,"""Estamos bem, e você? Estavamos te
 procurando""" ), 13000)
 turtle.ontimer(lambda: fala(jujuba, """Eu estava por aqui, meditando, como sempre"""), 17000)
@@ -122,7 +123,7 @@ como nos velhos tempos, lembra?""" ), 26000)
 turtle.ontimer(lambda: fala(jujuba, """ah, sim! como eu poderia me esquecer
 desses dias incriveis?"""), 30000)
 turtle.ontimer(lambda: fala(jujuba, """Vamos procurar a Lady  Íris!"""), 35000)
-turtle.ontimer(lambda: fala(jakeEfinn, """vamos!"""), 37000)
+turtle.ontimer(lambda: fala(jakeEfinn, """vamos!"""), 38000)
 
 #apagar falas
 turtle.ontimer(lambda: apagar_balao(jakeEfinn),10000 )
@@ -132,8 +133,8 @@ turtle.ontimer(lambda: apagar_balao(jujuba),22000 )
 turtle.ontimer(lambda: apagar_balao(jujuba),26000 )
 turtle.ontimer(lambda: apagar_balao(jakeEfinn),30000 )
 turtle.ontimer(lambda: apagar_balao(jujuba),35000 )
-turtle.ontimer(lambda: apagar_balao(jujuba),37000)
-turtle.ontimer(lambda: apagar_balao(jakeEfinn),39000 )
+turtle.ontimer(lambda: apagar_balao(jujuba),38000)
+turtle.ontimer(lambda: apagar_balao(jakeEfinn),41000 )
 
 # Inicia o loop principal do Turtle
 turtle.mainloop()
