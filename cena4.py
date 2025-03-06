@@ -70,3 +70,40 @@ def mover_com_while(personagem: turtle.Turtle, coordenadas):
         turtle.ontimer(mover, 1000)
 
     mover()
+
+def cena4():
+    turtle.setup(1150, 694)
+
+    try:
+        turtle.bgpic("nisaan/fundos/fundo3.gif")
+    except:
+        print("Erro: fundo3.gif não encontrado!")
+
+    iris = turtle.Turtle()
+    try:
+        turtle.addshape("nisaan/personagens/everybody.gif")
+        iris.shape("nisaan/personagens/everybody.gif")
+    except:
+        print("Erro: everybody.gif não encontrado!")
+
+    iris.hideturtle()
+    iris.penup()
+    iris.goto(45, 33)
+    iris.showturtle()
+
+    # Agendamento de falas
+    turtle.ontimer(lambda: fala(iris, "Olá! Como você está?", tempo=5), 1000)
+    turtle.ontimer(lambda: fala(iris, "Estou indo bem, e você?", tempo=5), 6000)
+    turtle.ontimer(lambda: fala(iris, "Eu também estou bem!", tempo=5), 12000)
+    turtle.ontimer(lambda: fala(iris, "Vamos explorar mais?", tempo=5), 18000)
+
+    # Agendamento de apagar falas
+    turtle.ontimer(lambda: apagar_balao(iris), 10000)
+    turtle.ontimer(lambda: apagar_balao(iris), 16000)
+    turtle.ontimer(lambda: apagar_balao(iris), 22000)
+
+# Inicia a cena
+cena4()
+
+# Mantém a tela aberta
+turtle.mainloop()
