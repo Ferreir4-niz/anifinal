@@ -70,3 +70,68 @@ def mover_com_while(personagem: turtle.Turtle, coordenadas):
         turtle.ontimer(mover, 1000)
 
     mover()
+
+def cena3():
+        turtle.setup(1150, 694)
+
+try:
+        turtle.bgpic("nisaan/fundos/fundo5.gif")
+except:
+        print("Erro: fundo5.gif não encontrado!")
+
+jakeEfinn = turtle.Turtle()
+try:
+        turtle.addshape("nisaan/personagens/jakeEfinn.gif")
+        jakeEfinn.shape("nisaan/personagens/jakeEfinn.gif")
+except:
+        print("Erro: jakeEfinn.gif não encontrado!")
+
+jakeEfinn.hideturtle()
+jakeEfinn.penup()
+jakeEfinn.goto(-515, -148)
+jakeEfinn.showturtle()
+
+coordenadas = [(-254, -145), (-175, -143), (-20, -143), (114, -120), (175, -116)]
+mover_com_while(jakeEfinn, coordenadas)
+
+jujuba = turtle.Turtle()
+try:
+        turtle.addshape("nisaan/personagens/jujuba.gif")        
+        jujuba.shape("nisaan/personagens/jujuba.gif")
+except:
+        print("Erro: jujuba.gif não encontrado!")
+jujuba.hideturtle()
+jujuba.penup()
+jujuba.goto()
+jujuba.showturtle()
+
+iris = turtle.Turtle()
+try:
+      turtle.addshape("nisaan/personagens/unicorn.gif")
+      iris.shape("nisaan/personagens/unicorn.gif")
+except:
+      print("Erro: iris.gif não encontrado")
+
+iris.hideturtle()
+iris.penup()
+iris.goto()
+iris.showturtle()
+
+#falas
+turtle.ontimer(lambda: fala(), )
+turtle.ontimer(lambda: fala(), )
+turtle.ontimer(lambda: fala(), )
+turtle.ontimer(lambda: fala(), )
+turtle.ontimer(lambda: fala(), )
+turtle.ontimer(lambda: fala(), )
+turtle.ontimer(lambda: fala(), )
+turtle.ontimer(lambda: fala(), )
+
+#apagar fala
+turtle.ontimer(lambda: apagar_balao(), )
+turtle.ontimer(lambda: apagar_balao(), )
+turtle.ontimer(lambda: apagar_balao(), )
+turtle.ontimer(lambda: apagar_balao(), )
+turtle.ontimer(lambda: apagar_balao(), )
+turtle.ontimer(lambda: apagar_balao(), )
+turtle.ontimer(lambda: apagar_balao(), )
