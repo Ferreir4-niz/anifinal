@@ -81,8 +81,8 @@ def cena1():
 
     bmo = turtle.Turtle()
     try:
-        turtle.addshape(r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\NiSaAn.py\\personagens\\bmo.gif")
-        bmo.shape(r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\NiSaAn.py\\personagens\\bmo.gif")
+        turtle.addshape("nisaan/personagens/bmo.gif ")
+        bmo.shape("nisaan/personagens/bmo.gif ")
     except:
         print("Erro: bmo.gif não encontrado!")
 
