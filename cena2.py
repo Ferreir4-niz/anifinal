@@ -71,28 +71,32 @@ def mover_com_while(personagem: turtle.Turtle, coordenadas):
 
     mover()
 
-    def cena2():
-        turtle.setup(1150, 694)
+def cena2():
+    """Define o tamanho da tela."""
+    turtle.setup(1150, 694)  # Configura a tela para 1150x694
 
-    try:
-        turtle.bgpic("nisaan/fundos/fundo4.gif")
-    except:
-        print("Erro: fundo4.gif não encontrado!")
+# Chama a função para configurar a tela antes de iniciar o loop principal
+cena2()
 
-    jakeEfinn = turtle.Turtle()
-    try:
-        turtle.addshape("nisaan/personagens/jakeEfinn.gif")
-        jakeEfinn.shape("nisaan/personagens/jakeEfinn.gif")
-    except:
-        print("Erro: jakeEfinn.gif não encontrado!")
+try:
+    turtle.bgpic("nisaan/fundos/fundo4.gif")
+except:
+    print("Erro: fundo4.gif não encontrado!")
 
-    jakeEfinn.hideturtle()
-    jakeEfinn.penup()
-    jakeEfinn.goto(-515, -148)
-    jakeEfinn.showturtle()
+jakeEfinn = turtle.Turtle()
+try:
+    turtle.addshape("nisaan/personagens/jakeEfinn.gif")
+    jakeEfinn.shape("nisaan/personagens/jakeEfinn.gif")
+except:
+    print("Erro: jakeEfinn.gif não encontrado!")
 
-    coordenadas = [(-254, -145), (-175, -143), (-20, -143), (114, -120), (175, -116)]
-    mover_com_while(jakeEfinn, coordenadas)
+jakeEfinn.hideturtle()
+jakeEfinn.penup()
+jakeEfinn.goto(x=371, y=-115 )
+jakeEfinn.showturtle()
+
+coordenadas = [(443, -123), (377, -122), (280, -116), (171, -130), (66, -144), (-53, -154), (-152, -158), (-257, -144),]
+mover_com_while(jakeEfinn, coordenadas)
 
 jujuba = turtle.Turtle()
 try:
@@ -102,16 +106,27 @@ except:
     print("Erro: jujuba.gif não encontrado!")
 jujuba.hideturtle()
 jujuba.penup()
-jujuba.goto()
+jujuba.goto( x=-503, y=-120)
 jujuba.showturtle()
 
 #falas
 
-turtle.ontimer(lambda: fala(jakeEfinn, "Oi princesa jujuba"), 5000)
-turtle.ontimer(lambda: fala(jujuba, "Oi meninos, como vocês estão?"), 9000)
-turtle.ontimer(lambda: fala(jakeEfinn,"Estamos bem, e você?" ), 13000)
-turtle.ontimer(lambda: fala(), 17000)
-turtle.ontimer(lambda: fala(), 21000)
+turtle.ontimer(lambda: fala(jakeEfinn, "Oi, princesa jujuba!"), 8000)
+turtle.ontimer(lambda: fala(jujuba, "Oi, meninos! como vocês estão?"), 10000)
+turtle.ontimer(lambda: fala(jakeEfinn,"""Estamos bem, e você? Estavamos te
+procurando""" ), 13000)
+turtle.ontimer(lambda: fala(jujuba, """Eu estava por aqui, meditando, como sempre"""), 17000)
+turtle.ontimer(lambda: fala(jujuba, """Mas o que vocês queriam comigo"""), 21000)
 turtle.ontimer(lambda: fala(), 25000)
 turtle.ontimer(lambda: fala(), 29000)
 turtle.ontimer(lambda: fala(), 32000)
+
+#apagar falas
+turtle.ontimer(lambda: apagar_balao(jakeEfinn),10000 )
+turtle.ontimer(lambda: apagar_balao(jujuba),13000 )
+turtle.ontimer(lambda: apagar_balao(jakeEfinn), 17000)
+turtle.ontimer(lambda: apagar_balao(), )
+turtle.ontimer(lambda: apagar_balao(), )
+
+# Inicia o loop principal do Turtle
+turtle.mainloop()
