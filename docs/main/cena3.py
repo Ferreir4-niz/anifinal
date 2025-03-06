@@ -1,4 +1,1 @@
-# main.cena3()
-
-
-
+print("Executando cena3.py")

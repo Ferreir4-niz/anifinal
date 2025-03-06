@@ -1,100 +1,43 @@
-"""
-Módulo principal
-"""
+import subprocess
+import os
 
-import turtle
+menu_principal = """
+Escolha uma cena para executar:
+1 - Cena 1
+2 - Cena 2
+3 - Cena 3
+4 - Cena 4
+5 - Sair
+Digite sua opção: """
 
-from animaivos.nucleo import carrega_img_fundo, carrega_personagens, fala, habilita_clique
-
-# Do módulo menus, do pacote ______, import o menu_principal
-from animaivos.menus import menu_principal
-
-def cena_demo():
-    
-    """Cena de demonstração."""
-
-    LARG=1110
-    ALT=694
-    MEIA_LARG=(LARG//2)
-    MEIA_ALT=(ALT//2)
-    turtle.setup(1110, 694)
-
-    carrega_img_fundo("fundo-com-degraus.png")
-
-    # O gato será visto em todo o programa
-    global gato
-    global rato
-
-    gato = turtle.Turtle(shape="_cat.gif")
-    gato.up()
-    fala(gato, "Olá!")
-    fala(gato, "Estou no centro da imagem.")
-    gato.goto(-MEIA_LARG, 0)
-    gato.shape("cat_.gif")
-    gato.goto(0, 0)
-
-    rato = turtle.Turtle(shape="mouse_.gif")
-    rato.up()
-    fala(rato, "Olá!")
-    fala(rato, "Estou no centro da imagem.")
-    rato.goto(+MEIA_LARG, 0)
-    rato.shape("_mouse.gif")
-    rato.goto(0, 0)
-
-    
-# Renomei a função seguindo o padrao <cena_descricao_breve_cena>
-def cena1():
-    """
-    Descrição da cena 1
-    """
-    pass
-
-# Renomei a função seguindo o padrao <cena_descricao_breve_cena>
-def cena2():
-    """
-    Descrição da cena 2
-    """    
-    pass
-
-# Renomei a função seguindo o padrao <cena_descricao_breve_cena>
-def cena3():
-    """
-    Descrição da cena 3
-    """    
-    pass
-
-# Renomei a função seguindo o padrao <cena_descricao_breve_cena>
-def cena4():
-    """
-    Descrição da cena 4
-    """    
-    pass
-
-
-# Função principal
 def main():
-    carrega_personagens()    
-    print("Os seguintes personagens foram carregados:")
-    formas_gif = [forma for forma in turtle.getshapes() if forma.endswith('.gif')]
-    print('\n'.join(formas_gif))
+    cenas = {
+        1: r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\docs\\main\\cena1.py",
+        2: r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\docs\\main\\cena2.py",
+        3: r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\docs\\main\\cena3.py",
+        4: r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\docs\\main\\cena4.py"
+    }
 
-    op = int(input(menu_principal))
-    while op != 5:
-        if op == 1:
-            cena1()
-        elif op == 2:
-            cena2()
-        elif op == 3:
-            cena3()
-        elif op == 4:
-            cena4()
+    while True:
+        try:
+            op = int(input(menu_principal))  # Solicita a opção ao usuário
+        except ValueError:
+            print("Opção inválida! Digite um número entre 1 e 5.")
+            continue  # Retorna ao menu
+
+        if op == 5:
+            print("Saindo...")
+            break  # Sai do loop
+
+        if op in cenas:
+            if os.path.exists(cenas[op]):  # Verifica se o arquivo existe
+                print(f"Executando {cenas[op]}...\n")
+                subprocess.run(["python", cenas[op]])  # Executa e aguarda
+            else:
+                print(f"Erro: Arquivo {cenas[op]} não encontrado.")
         else:
-            print("Opção inválida.")
-            
-        op = int(input(menu_principal))
+            print("Opção inválida! Escolha um número entre 1 e 5.")
 
-    # turtle.done()
-
-# Chamada da função principal
+# Executa a função principal
 if __name__ == "__main__":
     main()
