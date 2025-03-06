@@ -1,5 +1,6 @@
 import subprocess
 import os
+import sys
 
 menu_principal = """
 Escolha uma cena para executar:
@@ -11,13 +12,17 @@ Escolha uma cena para executar:
 Digite sua opção: """
 
 def main():
+    # Pasta onde os arquivos de cena estão (relativa ao script atual)
+    pasta_cenas = "docs/main"
+    
+    # Cria um dicionário associando as opções às cenas
     cenas = {
-        1: r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\docs\\main\\cena1.py",
-        2: r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\docs\\main\\cena2.py",
-        3: r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\docs\\main\\cena3.py",
-        4: r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\docs\\main\\cena4.py"
+        1: "cena1.py",
+        2: "cena2.py",
+        3: "cena3.py",
+        4: "cena4.py"
     }
-
+    
     while True:
         try:
             op = int(input(menu_principal))  # Solicita a opção ao usuário
@@ -30,11 +35,16 @@ def main():
             break  # Sai do loop
 
         if op in cenas:
-            if os.path.exists(cenas[op]):  # Verifica se o arquivo existe
+            # Constrói o caminho relativo para o arquivo da cena
+            caminho_cena = os.path.join(, cenas[op])
+            
+            if os.path.exists(caminho_cena):  # Verifica se o arquivo existe
                 print(f"Executando {cenas[op]}...\n")
-                subprocess.run(["python", cenas[op]])  # Executa e aguarda
+                
+                # Usando sys.executable para garantir que o Python correto seja utilizado
+                subprocess.run([sys.executable, caminho_cena])  # Executa e aguarda
             else:
-                print(f"Erro: Arquivo {cenas[op]} não encontrado.")
+                print(f"Erro: Arquivo {cenas[op]} não encontrado no diretório {pasta_cenas}.")
         else:
             print("Opção inválida! Escolha um número entre 1 e 5.")
 

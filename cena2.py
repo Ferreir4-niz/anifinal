@@ -77,4 +77,41 @@ def mover_com_while(personagem: turtle.Turtle, coordenadas):
     try:
         turtle.bgpic("nisaan/fundos/fundo4.gif")
     except:
-        print("Erro: fundo2.gif não encontrado!")
+        print("Erro: fundo4.gif não encontrado!")
+
+    jakeEfinn = turtle.Turtle()
+    try:
+        turtle.addshape("nisaan/personagens/jakeEfinn.gif")
+        jakeEfinn.shape("nisaan/personagens/jakeEfinn.gif")
+    except:
+        print("Erro: jakeEfinn.gif não encontrado!")
+
+    jakeEfinn.hideturtle()
+    jakeEfinn.penup()
+    jakeEfinn.goto(-515, -148)
+    jakeEfinn.showturtle()
+
+    coordenadas = [(-254, -145), (-175, -143), (-20, -143), (114, -120), (175, -116)]
+    mover_com_while(jakeEfinn, coordenadas)
+
+jujuba = turtle.Turtle()
+try:
+    turtle.addshape("nisaan/personagens/jujuba.gif")        
+    jujuba.shape("nisaan/personagens/jujuba.gif")
+except:
+    print("Erro: jujuba.gif não encontrado!")
+jujuba.hideturtle()
+jujuba.penup()
+jujuba.goto()
+jujuba.showturtle()
+
+#falas
+
+turtle.ontimer(lambda: fala(jakeEfinn, "Oi princesa jujuba"), 5000)
+turtle.ontimer(lambda: fala(jujuba, "Oi meninos, como vocês estão?"), 9000)
+turtle.ontimer(lambda: fala(jakeEfinn,"Estamos bem, e você?" ), 13000)
+turtle.ontimer(lambda: fala(), 17000)
+turtle.ontimer(lambda: fala(), 21000)
+turtle.ontimer(lambda: fala(), 25000)
+turtle.ontimer(lambda: fala(), 29000)
+turtle.ontimer(lambda: fala(), 32000)
