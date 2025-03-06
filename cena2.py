@@ -154,7 +154,7 @@ turtle.ontimer(lambda: apagar_balao(jakeEfinn),41000 )
 
 #apagar a jujuba 1
 
-turtle.ontimer(lambda: turtle.hideturtle(jujuba) 41000)
+turtle.ontimer(lambda: jujuba.hideturtle, 41000)
 
 # Inicia o loop principal do Turtle
 turtle.mainloop()
