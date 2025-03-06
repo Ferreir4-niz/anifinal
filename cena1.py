@@ -75,14 +75,14 @@ def cena1():
     turtle.setup(1150, 694)
 
     try:
-        turtle.bgpic(r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\NiSaAn.py\\fundos\\fundo2.gif")
+        turtle.bgpic("nisaan/fundos/fundo2.gif")
     except:
         print("Erro: fundo2.gif não encontrado!")
 
     bmo = turtle.Turtle()
     try:
-        turtle.addshape("nisaan/personagens/bmo.gif ")
-        bmo.shape("nisaan/personagens/bmo.gif ")
+        turtle.addshape("nisaan/personagens/bmo.gif")
+        bmo.shape("nisaan/personagens/bmo.gif")
     except:
         print("Erro: bmo.gif não encontrado!")
 
@@ -93,8 +93,8 @@ def cena1():
 
     finnEjake = turtle.Turtle()
     try:
-        turtle.addshape(r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\NiSaAn.py\\personagens\\finnEjake.gif")
-        finnEjake.shape(r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\NiSaAn.py\\personagens\\finnEjake.gif")
+        turtle.addshape("nisaan/personagens/finnEjake.gif")
+        finnEjake.shape("nisaan/personagens/finnEjake.gif")
     except:
         print("Erro: finnEjake.gif não encontrado!")
 
@@ -113,8 +113,8 @@ def cena1():
         """Cria e move Jake e Finn após a saída de finnEjake"""
         jakeEfinn = turtle.Turtle()
         try:
-            turtle.addshape(r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\NiSaAn.py\\personagens\\jakeEfinn.gif")
-            jakeEfinn.shape(r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\NiSaAn.py\\personagens\\jakeEfinn.gif")
+            turtle.addshape("nisaan/personagens/jakeEfinn.gif")
+            jakeEfinn.shape("nisaan/personagens/jakeEfinn.gif")
         except:
             print("Erro: jakeEfinn.gif não encontrado!")
             return

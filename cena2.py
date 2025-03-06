@@ -70,3 +70,11 @@ def mover_com_while(personagem: turtle.Turtle, coordenadas):
         turtle.ontimer(mover, 1000)
 
     mover()
+
+    def cena2():
+        turtle.setup(1150, 694)
+
+    try:
+        turtle.bgpic("nisaan/fundos/fundo4.gif")
+    except:
+        print("Erro: fundo2.gif não encontrado!")
