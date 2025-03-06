@@ -12,10 +12,10 @@ Digite sua opção: """
 
 def main():
     cenas = {
-        1: r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\docs\\main\\cena1.py",
-        2: r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\docs\\main\\cena2.py",
-        3: r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\docs\\main\\cena3.py",
-        4: r"C:\\Users\\nick\\Documents\\GitHub\\anifinal\\docs\\main\\cena4.py"
+        1: "cena1.py",
+        2: "cena2.py",
+        3: "cena3.py",
+        4: "cena4.py"
     }
 
     while True:
@@ -30,11 +30,12 @@ def main():
             break  # Sai do loop
 
         if op in cenas:
-            if os.path.exists(cenas[op]):  # Verifica se o arquivo existe
-                print(f"Executando {cenas[op]}...\n")
-                subprocess.run(["python", cenas[op]])  # Executa e aguarda
+            script_path = os.path.join(os.path.dirname(__file__), cenas[op])  # Caminho relativo
+            if os.path.exists(script_path):  # Verifica se o arquivo existe
+                print(f"Executando {script_path}...\n")
+                subprocess.run(["python", script_path])  # Executa e aguarda
             else:
-                print(f"Erro: Arquivo {cenas[op]} não encontrado.")
+                print(f"Erro: Arquivo {script_path} não encontrado.")
         else:
             print("Opção inválida! Escolha um número entre 1 e 5.")
 
