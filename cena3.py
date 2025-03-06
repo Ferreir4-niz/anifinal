@@ -97,10 +97,10 @@ mover_com_while(jakeEfinn, coordenadas)
 
 jujuba = turtle.Turtle()
 try:
-        turtle.addshape("nisaan/personagens/jujuba.gif")        
-        jujuba.shape("nisaan/personagens/jujuba.gif")
+        turtle.addshape("nisaan/personagens/jujuba2.gif")        
+        jujuba.shape("nisaan/personagens/jujuba2.gif")
 except:
-        print("Erro: jujuba.gif não encontrado!")
+        print("Erro: jujuba2.gif não encontrado!")
 jujuba.hideturtle()
 jujuba.penup()
 jujuba.goto(12, 74)
