@@ -109,6 +109,12 @@ jujuba.penup()
 jujuba.goto(-404,-187)
 jujuba.showturtle()
 
+def criar_jujuba():
+        """Cria e move jujuba2 após a saída de jujuba1"""
+
+
+
+
 #falas
 
 turtle.ontimer(lambda: fala(jakeEfinn, "Oi, princesa jujuba!"), 8000)
