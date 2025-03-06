@@ -122,22 +122,25 @@ iris.goto(-313, -122)
 iris.showturtle()
 
 #falas
-turtle.ontimer(lambda: fala(), )
-turtle.ontimer(lambda: fala(), )
-turtle.ontimer(lambda: fala(), )
-turtle.ontimer(lambda: fala(), )
-turtle.ontimer(lambda: fala(), )
-turtle.ontimer(lambda: fala(), )
-turtle.ontimer(lambda: fala(), )
+turtle.ontimer(lambda: fala(jujuba2,"Oi, Lady!"),5000)
+turtle.ontimer(lambda: fala(jakeEfinn,"Como vai, Lady?"),8000 )
+turtle.ontimer(lambda: fala(iris, """annyeong yaedeul-a!"""),11000)
+turtle.ontimer(lambda: fala(Jujuba2, ""Os meninos nos convidaram para 
+dar um passeio, Íris."""),15000)
+turtle.ontimer(lambda: fala(jakeEfinn, """Você tem que aceitar,
+Lady! Vai ser irado!"""), 20000 )
+turtle.ontimer(lambda: fala(iris, """mullon! jeongmal meosjil
+geoyeyo!"""), 24000)
+turtle.ontimer(lambda: fala(),28000 )
 turtle.ontimer(lambda: fala(), )
 
 #apagar fala
-turtle.ontimer(lambda: apagar_balao(), )
-turtle.ontimer(lambda: apagar_balao(), )
-turtle.ontimer(lambda: apagar_balao(), )
-turtle.ontimer(lambda: apagar_balao(), )
-turtle.ontimer(lambda: apagar_balao(), )
-turtle.ontimer(lambda: apagar_balao(), )
+turtle.ontimer(lambda: apagar_balao(jujuba2),8000 )
+turtle.ontimer(lambda: apagar_balao(jakeEfinn),11000 )
+turtle.ontimer(lambda: apagar_balao(iris),15000)
+turtle.ontimer(lambda: apagar_balao(jujuba2),20000 )
+turtle.ontimer(lambda: apagar_balao(jakeEfinn),24000 )
+turtle.ontimer(lambda: apagar_balao(),28000 )
 turtle.ontimer(lambda: apagar_balao(), )
 
 turtle.mainloop()
