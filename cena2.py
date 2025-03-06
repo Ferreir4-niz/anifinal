@@ -111,9 +111,19 @@ jujuba.showturtle()
 
 def criar_jujuba():
         """Cria e move jujuba2 após a saída de jujuba1"""
+    jujuba2 = turtle.Turtle()
+try:
+        turtle.addshape("nisaan/personagens/jujuba2.gif")        
+        jujuba.shape("nisaan/personagens/jujuba2.gif")
+except:
+        print("Erro: jujuba2.gif não encontrado!")
 
+jujuba2.hideturtle()
+jujuba2.penup()
+jujuba2.goto(-404,-187)
+jujuba2.showturtle()
 
-
+turtle.ontimer(lambda: criar_jujuba(jujuba1), 41000)
 
 #falas
 
@@ -141,6 +151,10 @@ turtle.ontimer(lambda: apagar_balao(jakeEfinn),30000 )
 turtle.ontimer(lambda: apagar_balao(jujuba),35000 )
 turtle.ontimer(lambda: apagar_balao(jujuba),38000)
 turtle.ontimer(lambda: apagar_balao(jakeEfinn),41000 )
+
+#apagar a jujuba 1
+
+turtle.ontimer(lambda: turtle.hideturtle(jujuba) 41000)
 
 # Inicia o loop principal do Turtle
 turtle.mainloop()
