@@ -88,19 +88,21 @@ def cena4():
 
     iris.hideturtle()
     iris.penup()
-    iris.goto(45, 33)
+    iris.goto(-537, -57)
     iris.showturtle()
 
-    # Agendamento de falas
-    turtle.ontimer(lambda: fala(iris, "Olá! Como você está?", tempo=5), 1000)
-    turtle.ontimer(lambda: fala(iris, "Estou indo bem, e você?", tempo=5), 6000)
-    turtle.ontimer(lambda: fala(iris, "Eu também estou bem!", tempo=5), 12000)
-    turtle.ontimer(lambda: fala(iris, "Vamos explorar mais?", tempo=5), 18000)
+coordenadas = [(415, 12), (281, -34), (87, 37), (-51, -79), (194, 36), (-413, -57), (-551, 56)]
+
+# Agendamento de falas
+turtle.ontimer(lambda: fala(iris, ), 1000)
+turtle.ontimer(lambda: fala(iris, ), 6000)
+turtle.ontimer(lambda: fala(iris, ), 12000)
+turtle.ontimer(lambda: fala(iris, ), 18000)
 
     # Agendamento de apagar falas
-    turtle.ontimer(lambda: apagar_balao(iris), 10000)
-    turtle.ontimer(lambda: apagar_balao(iris), 16000)
-    turtle.ontimer(lambda: apagar_balao(iris), 22000)
+turtle.ontimer(lambda: apagar_balao(iris), 10000)
+turtle.ontimer(lambda: apagar_balao(iris), 16000)
+turtle.ontimer(lambda: apagar_balao(iris), 22000)
 
 # Inicia a cena
 cena4()
