@@ -111,7 +111,7 @@ except:
 
 iris.hideturtle()
 iris.penup()
-iris.goto(-396, -78)
+iris.goto(-370, -78)
 iris.showturtle()
 
 # Coordenadas de movimento ajustadas para fazer jujuba2 mais à direita e jakeEfinn mais à esquerda na última posição
@@ -123,7 +123,7 @@ coordenadas = [
     [(256, -87), (197, -103)],   # jakeEfinn e jujuba2 na quinta posição
     [(189, -76), (150, -92)],    # jakeEfinn e jujuba2 na sexta posição
     [(130, -64), (90, -78)],     # jakeEfinn e jujuba2 na sétima posição
-    [(100, -53), (170, -69)],    # Última posição: jujuba2 mais à direita e jakeEfinn mais à esquerda
+    [(190, -53), (70, -69)],    # Última posição: jujuba2 mais à direita e jakeEfinn mais à esquerda
 ]
 
 # Mover os personagens simultaneamente
@@ -131,25 +131,25 @@ mover_simultaneo([jujuba2, jakeEfinn], coordenadas)
 
 # Falas programadas para ocorrer depois que os personagens pararem de se mover
 turtle.ontimer(lambda: fala(jujuba2, "Oi, Lady!"), 8000)  # Após movimento
-turtle.ontimer(lambda: fala(jakeEfinn, "Como vai, Lady?"), 12000)  # Após jujuba2
-turtle.ontimer(lambda: fala(iris, "annyeong yaedeul-a!"), 16000)  # Após jakeEfinn
+turtle.ontimer(lambda: fala(jakeEfinn, "Como vai, Lady?"), 11000)  # Após jujuba2
+turtle.ontimer(lambda: fala(iris, "annyeong yaedeul-a!"), 14000)  # Após jakeEfinn
 turtle.ontimer(lambda: fala(jujuba2, """Os meninos nos convidaram para
-dar um passeio, Íris."""), 20000)  # Após iris
+dar um passeio, Íris."""), 18000)  # Após iris
 turtle.ontimer(lambda: fala(jakeEfinn, """Você tem que aceitar,
 Lady! Vai ser irado!"""), 24000)  # Após jujuba2
 turtle.ontimer(lambda: fala(iris, """mullon! jeongmal meosjil
 geoyeyo!"""), 28000)  # Após jakeEfinn
-turtle.ontimer(lambda: fala(iris, """"nae mog-e ollatala
+turtle.ontimer(lambda: fala(iris, """nae mog-e ollatala
 yaedeul-a!"""), 32000)
 
 # Apagar falas após um tempo
-turtle.ontimer(lambda: apagar_balao(jujuba2), 16000)
-turtle.ontimer(lambda: apagar_balao(jakeEfinn), 20000)
-turtle.ontimer(lambda: apagar_balao(iris), 24000)
-turtle.ontimer(lambda: apagar_balao(jujuba2), 28000)
-turtle.ontimer(lambda: apagar_balao(jakeEfinn), 32000)
+turtle.ontimer(lambda: apagar_balao(jujuba2), 11000)
+turtle.ontimer(lambda: apagar_balao(jakeEfinn), 14000)
+turtle.ontimer(lambda: apagar_balao(iris), 18000)
+turtle.ontimer(lambda: apagar_balao(jujuba2), 24000)
+turtle.ontimer(lambda: apagar_balao(jakeEfinn), 28000)
 turtle.ontimer(lambda: apagar_balao(iris), 32000)
-turtle.ontimer(lambda: apagar_balao(iris), 36000)
+turtle.ontimer(lambda: apagar_balao(iris), 37000)
 
 # Iniciar a janela do turtle
 turtle.mainloop()
