@@ -26,7 +26,7 @@ def main():
             continue  # Retorna ao menu
 
         if op == 5:
-            print("Saindo...")
+            print("Saindo...\n")
             break  # Sai do loop
 
         if op in cenas:
@@ -38,6 +38,9 @@ def main():
                 print(f"Erro: Arquivo {script_path} não encontrado.")
         else:
             print("Opção inválida! Escolha um número entre 1 e 5.")
+
+    # Mensagem ao sair do programa
+    print("\nDesenvolvido por: Anny Ellen, Sara Luíza e Ferreira")
 
 # Executa a função principal
 if __name__ == "__main__":
