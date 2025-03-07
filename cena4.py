@@ -82,7 +82,7 @@ def cena4():
     todos = turtle.Turtle()
     try:
         turtle.addshape("nisaan/personagens/everybody.gif")
-        .shape("nisaan/personagens/everybody.gif")
+        todos.shape("nisaan/personagens/everybody.gif")
     except:
         print("Erro: everybody.gif não encontrado!")
 
