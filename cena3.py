@@ -130,6 +130,7 @@ coordenadas = [
 mover_simultaneo([jujuba2, jakeEfinn], coordenadas)
 
 # Falas programadas para ocorrer depois que os personagens pararem de se mover
+# Exibir falas
 turtle.ontimer(lambda: fala(jujuba2, "Oi, Lady!"), 8000)  # Após movimento
 turtle.ontimer(lambda: fala(jakeEfinn, "Como vai, Lady?"), 11000)  # Após jujuba2
 turtle.ontimer(lambda: fala(iris, "annyeong yaedeul-a!"), 14000)  # Após jakeEfinn
@@ -142,14 +143,15 @@ geoyeyo!"""), 28000)  # Após jakeEfinn
 turtle.ontimer(lambda: fala(iris, """nae mog-e ollatala
 yaedeul-a!"""), 32000)
 
-# Apagar falas após um tempo
-turtle.ontimer(lambda: apagar_balao(jujuba2), 11000)
-turtle.ontimer(lambda: apagar_balao(jakeEfinn), 14000)
-turtle.ontimer(lambda: apagar_balao(iris), 18000)
-turtle.ontimer(lambda: apagar_balao(jujuba2), 24000)
-turtle.ontimer(lambda: apagar_balao(jakeEfinn), 28000)
-turtle.ontimer(lambda: apagar_balao(iris), 32000)
-turtle.ontimer(lambda: apagar_balao(iris), 37000)
+# Apagar falas anteriores antes de exibir novas
+turtle.ontimer(lambda: apagar_balao(jujuba2), 11000)  # Apagar fala jujuba2 após 11s
+turtle.ontimer(lambda: apagar_balao(jakeEfinn), 14000)  # Apagar fala jakeEfinn após 14s
+turtle.ontimer(lambda: apagar_balao(iris), 18000)  # Apagar fala iris após 18s
+turtle.ontimer(lambda: apagar_balao(jujuba2), 24000)  # Apagar fala jujuba2 após 24s
+turtle.ontimer(lambda: apagar_balao(jakeEfinn), 28000)  # Apagar fala jakeEfinn após 28s
+turtle.ontimer(lambda: apagar_balao(iris), 32000)  # Apagar fala iris após 32s
+turtle.ontimer(lambda: apagar_balao(iris), 37000)  # Apagar fala iris após 37s
+
 
 # Iniciar a janela do turtle
 turtle.mainloop()
