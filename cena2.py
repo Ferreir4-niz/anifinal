@@ -95,7 +95,7 @@ jakeEfinn.penup()
 jakeEfinn.goto(x=371, y=-115 )
 jakeEfinn.showturtle()
 
-coordenadas = [(443, -123), (377, -122), (280, -116), (171, -130), (66, -144), (-53, -154), (-152, -158), (-128, -148),]
+coordenadas = [(443, -123), (377, -122), (280, -116), (171, -130), (66, -144), (-53, -154), (-152, -158), (-257, -144),]
 mover_com_while(jakeEfinn, coordenadas)
 
 jujuba = turtle.Turtle()
@@ -108,21 +108,6 @@ jujuba.hideturtle()
 jujuba.penup()
 jujuba.goto(-404,-187)
 jujuba.showturtle()
-
-def criar_jujuba():
-        """Cria e move jujuba após a outra sair"""
-        jujuba2 = turtle.Turtle()
-        try:
-                turtle.addshape("nisaan/personagens/jujuba2.gif")        
-                jujuba2.shape("nisaan/personagens/jujuba2.gif")
-        except:
-                print("Erro: jujuba2.gif não encontrado!")
-        jujuba2.hideturtle()
-        jujuba2.penup()
-        jujuba2.goto(-397, -134)
-        jujuba2.showturtle()
-
-turtle.ontimer(lambda: criar_jujuba(jujuba2), 41000)
 
 #falas
 
@@ -150,9 +135,6 @@ turtle.ontimer(lambda: apagar_balao(jakeEfinn),30000 )
 turtle.ontimer(lambda: apagar_balao(jujuba),35000 )
 turtle.ontimer(lambda: apagar_balao(jujuba),38000)
 turtle.ontimer(lambda: apagar_balao(jakeEfinn),41000 )
-
-#troca de personagem
-turtle.ontimer(lambda: turtle.hideturtle(jujuba), 41000)
 
 # Inicia o loop principal do Turtle
 turtle.mainloop()
