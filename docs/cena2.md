@@ -1,3 +1,3 @@
 # cena2
 
-Eles encontram a princesa Jujuba e chamam ela para um passeio, ela aceita e chama para procurar a lady Iris.
+Finn e Jake, finalmente acham a princesa Jujuba, que estava sentada na beira do lago, meditando, segundo ela mesma. Os meninos então, dizem que estavam procurando por ela, e que estavam querendo chamar ela para uma aventura nostálgica, como eles costumavam fazer sempre antes. A princesa, então, encantada com a oferta encantadora, sai em busca de Lady, junto com seus amigos, para chama-la para a super aventura.

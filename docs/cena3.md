@@ -1,3 +1,3 @@
 # cena3
 
-Apois encontrar a lady, a princesa Jujuba fala que Finn e Jake as chamaram para um passeio.
+Ápos andar por um bom caminho, eles encontram Lady, ao lado dos arbustos do jardim encantado. Eles a convidam para a aventura, e ela encantada em embarcar em uma nova história com seus amigos, logo aceita a oferta, exclamando o quanto aquilo ia ser divertido e legal. Então, ela diz "subam no meu pescoço", já que ela tem o poder de voar, por ser uma unicórnio. E eles, assim, saem para sua tão desejada aventura.
