@@ -57,17 +57,28 @@ def apagar_balao(personagem: turtle.Turtle):
         balao.hideturtle()
 
 def mover_com_while(personagem: turtle.Turtle, coordenadas):
-    """Move o personagem entre as coordenadas com um delay."""
+    """Move o personagem entre as coordenadas com 3 repetições."""
     index = 0
+    repeticoes = 3  # Número de repetições do movimento
 
     def mover():
-        nonlocal index
-        if index >= len(coordenadas):
-            return
-        x, y = coordenadas[index]
-        personagem.goto(x, y)
-        index += 1
-        turtle.ontimer(mover, 1000)
+        nonlocal index, repeticoes
+
+        if repeticoes > 0:
+            if index < len(coordenadas):
+                x, y = coordenadas[index]
+                personagem.goto(x, y)
+                index += 1
+                turtle.ontimer(mover, 1000)  # Chama a função mover após 1 segundo
+            else:
+                # Se atingimos o final das coordenadas, reiniciamos a movimentação
+                index = 0
+                repeticoes -= 1
+                if repeticoes > 0:
+                    turtle.ontimer(mover, 1000)  # Reinicia o movimento após o ciclo
+        else:
+            # Quando não há mais repetições, não faz nada
+            pass
 
     mover()
 
@@ -92,50 +103,47 @@ except:
 
 jakeEfinn.hideturtle()
 jakeEfinn.penup()
-jakeEfinn.goto(x=371, y=-115 )
+jakeEfinn.goto(x=371, y=-115)
 jakeEfinn.showturtle()
 
-coordenadas = [(443, -123), (377, -122), (280, -116), (171, -130), (66, -144), (-53, -154), (-152, -158), (-257, -144),]
+coordenadas = [(443, -123), (377, -122), (280, -116), (171, -130), (66, -144), (-53, -154), (-152, -158), (-257, -144)]
 mover_com_while(jakeEfinn, coordenadas)
 
 jujuba = turtle.Turtle()
 try:
-    turtle.addshape("nisaan/personagens/jujuba.gif")        
+    turtle.addshape("nisaan/personagens/jujuba.gif")
     jujuba.shape("nisaan/personagens/jujuba.gif")
 except:
     print("Erro: jujuba.gif não encontrado!")
 jujuba.hideturtle()
 jujuba.penup()
-jujuba.goto(-404,-187)
+jujuba.goto(-404, -187)
 jujuba.showturtle()
 
 #falas
-
 turtle.ontimer(lambda: fala(jakeEfinn, "Oi, princesa jujuba!"), 8000)
 turtle.ontimer(lambda: fala(jujuba, """Oi, meninos! 
 como vocês estão?"""), 10000)
-turtle.ontimer(lambda: fala(jakeEfinn,"""Estamos bem, e você? Estavamos te
+turtle.ontimer(lambda: fala(jakeEfinn, """Estamos bem, e você? Estavamos te
 procurando""" ), 13000)
 turtle.ontimer(lambda: fala(jujuba, """Eu estava por aqui, meditando, 
 como sempre"""), 17000)
-turtle.ontimer(lambda: fala(jakeEfinn,"""Estavamos pensando em dar uma volta, nós todos,
+turtle.ontimer(lambda: fala(jakeEfinn, """Estavamos pensando em dar uma volta, nós todos,
 como nos velhos tempos, lembra?""" ), 22000)
 turtle.ontimer(lambda: fala(jujuba, """ah, sim! como eu poderia me esquecer
-desses dias incriveis?"""),27000)
+desses dias incriveis?"""), 27000)
 turtle.ontimer(lambda: fala(jujuba, """Vamos procurar a Lady  Íris!"""), 31000)
 turtle.ontimer(lambda: fala(jakeEfinn, """vamos!"""), 34000)
 
 #apagar falas
-turtle.ontimer(lambda: apagar_balao(jakeEfinn),10000 )
-turtle.ontimer(lambda: apagar_balao(jujuba),13000 )
+turtle.ontimer(lambda: apagar_balao(jakeEfinn), 10000)
+turtle.ontimer(lambda: apagar_balao(jujuba), 13000)
 turtle.ontimer(lambda: apagar_balao(jakeEfinn), 17000)
-turtle.ontimer(lambda: apagar_balao(jujuba),22000 )
-turtle.ontimer(lambda: apagar_balao(jakeEfinn),27000 )
-turtle.ontimer(lambda: apagar_balao(jujuba),31000 )
-turtle.ontimer(lambda: apagar_balao(jujuba),34000)
-turtle.ontimer(lambda: apagar_balao(jakeEfinn),36000 )
+turtle.ontimer(lambda: apagar_balao(jujuba), 22000)
+turtle.ontimer(lambda: apagar_balao(jakeEfinn), 27000)
+turtle.ontimer(lambda: apagar_balao(jujuba), 31000)
+turtle.ontimer(lambda: apagar_balao(jujuba), 34000)
+turtle.ontimer(lambda: apagar_balao(jakeEfinn), 36000)
 
 # Inicia o loop principal do Turtle
 turtle.mainloop()
-
-cena2()

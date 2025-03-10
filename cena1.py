@@ -57,17 +57,28 @@ def apagar_balao(personagem: turtle.Turtle):
         balao.hideturtle()
 
 def mover_com_while(personagem: turtle.Turtle, coordenadas):
-    """Move o personagem entre as coordenadas com um delay."""
+    """Move o personagem entre as coordenadas com 3 repetições."""
     index = 0
+    repeticoes = 5 # Número de repetições do movimento
 
     def mover():
-        nonlocal index
-        if index >= len(coordenadas):
-            return
-        x, y = coordenadas[index]
-        personagem.goto(x, y)
-        index += 1
-        turtle.ontimer(mover, 1000)
+        nonlocal index, repeticoes
+
+        if repeticoes > 0:
+            if index < len(coordenadas):
+                x, y = coordenadas[index]
+                personagem.goto(x, y)
+                index += 1
+                turtle.ontimer(mover, 1000)  # Chama a função mover após 1 segundo
+            else:
+                # Se atingimos o final das coordenadas, reiniciamos a movimentação
+                index = 0
+                repeticoes -= 1
+                if repeticoes > 0:
+                    turtle.ontimer(mover, 1000)  # Reinicia o movimento após o ciclo
+        else:
+            # Quando não há mais repetições, não faz nada
+            pass
 
     mover()
 
